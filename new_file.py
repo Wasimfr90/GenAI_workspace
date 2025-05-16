@@ -1,12 +1,16 @@
 import openai
 import streamlit as st
 import pandas as pd
+import os
+from dotenv import load_dotenv
 
-from secrect_key import openapi_key
+# from secrect_key import openapi_key
 
+# Loads environment variables from .env
+load_dotenv()
 
 # Set your OpenAI API key (you can also use environment variable)
-openai.api_key = openapi_key
+openai.api_key = os.getenv("OPENAI_API_KEY")
 
 st.header("Excel Query Assistant with OpenAI")
 
